@@ -10,8 +10,10 @@ axios.get(url).then((result) => {
   const html = result.data;
   const $ = cheerio.load(html);
   const some = $(".conference-title", html);
-  some.each(function () {
-    console.log($(this).text());
+  some.each(function (one) {
+    $(".conference-date", one).each(function () {
+      console.log($(this).text());
+    });
   });
 });
 
