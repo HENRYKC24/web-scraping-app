@@ -3,6 +3,6 @@ const { getConferences } = require("../controllers/conferenceController");
 
 const route = express.Router();
 
-route.route("/conferences").get(getConferences);
+route.route("/").get(getConferences);
 
 module.exports = route;
