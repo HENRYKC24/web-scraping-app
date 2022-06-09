@@ -17,12 +17,12 @@ app.get("/api/v1/calendar", (req, res) => {
 
         const titles = $("div.conference-tile");
 
-        tites.each(function (index) {
-          const title = $(this).find("h6").text();
-          const date = $(this).find(".conference-date").text();
-          const location = $(this).find(".conference-location").text();
-          const url = `${baseURL}${$(this).find("a").attr("href")}`;
+        titles.each(function (index) {
           if ($(this).find("h6").text()) {
+            const title = $(this).find("h6").text();
+            const date = $(this).find(".conference-date").text();
+            const location = $(this).find(".conference-location").text();
+            const url = `${baseURL}${$(this).find("a").attr("href")}`;
             conferenceData[index] = {
               title,
               date,
