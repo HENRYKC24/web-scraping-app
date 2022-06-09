@@ -14,12 +14,15 @@ exports.getEvents = (req, res) => {
 
         const eventsData = [];
 
+        // GET ALL INSTANCES OF THE EVENTS
         const events = $(".rhov");
+
         events.each(function (index) {
           const date = $(this).find("a div:first-child").text();
           const name = $(this).find("a div:nth-child(2)").text();
           const location = $(this).find("a div:nth-child(3)").text();
           const url = `${baseURL}${$(this).find("a").attr("href")}`;
+          
           eventsData[index] = {
             name: name.replace("REGISTER NOW", "").trim(),
             date,
@@ -32,8 +35,6 @@ exports.getEvents = (req, res) => {
               : "In-Person",
           };
         });
-
-        console.log("eventsData", eventsData);
         res.status(200).json({
           status: "success",
           dataCount: eventsData.length,

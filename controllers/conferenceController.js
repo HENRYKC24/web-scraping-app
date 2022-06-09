@@ -1,6 +1,8 @@
+// IMPORT THIRD PART LIBRARY
 const axios = require("axios");
 const cheerio = require("cheerio");
 
+// CONFERENCES REQUEST HANDLER
 exports.getConferences = (req, res) => {
   try {
     const baseURL = "https://www.gartner.com";
@@ -12,6 +14,7 @@ exports.getConferences = (req, res) => {
 
         const conferencesData = [];
 
+        // GET ALL INSTANCES OF THE CONFERENCES
         const conferences = $("div.conference-tile");
 
         conferences.each(function (index) {
