@@ -10,18 +10,18 @@ exports.getConferences = (req, res) => {
         const html = result.data;
         const $ = cheerio.load(html);
 
-        const conferenceData = [];
+        const conferencesData = [];
 
-        const titles = $("div.conference-tile");
+        const conferences = $("div.conference-tile");
 
-        titles.each(function (index) {
+        conferences.each(function (index) {
           if ($(this).find("h6").text()) {
-            const title = $(this).find("h6").text();
+            const name = $(this).find("h6").text();
             const date = $(this).find(".conference-date").text();
             const location = $(this).find(".conference-location").text();
             const url = `${baseURL}${$(this).find("a").attr("href")}`;
-            conferenceData[index] = {
-              title,
+            conferencesData[index] = {
+              name,
               date,
               location,
               url,
@@ -33,9 +33,9 @@ exports.getConferences = (req, res) => {
         });
         res.status(200).json({
           status: "success",
-          dataCount: conferenceData.length,
+          dataCount: conferencesData.length,
           data: {
-            conferenceData,
+            conferenceData: conferencesData,
           },
         });
       })
