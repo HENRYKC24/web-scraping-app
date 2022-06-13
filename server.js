@@ -5,10 +5,7 @@ const app = require("./index");
 const { sendSiteDataToDatabase } = require("./utils/sendSiteDataToDatabase");
 dotenv.config({ path: "./config.env" });
 
-const DB = process.env.MONGODB_REMOTE_SERVER.replace(
-  "<PASSWORD>",
-  process.env.MONGODB_PASSWORD
-);
+const DB = process.env.MONGODB_REMOTE_SERVER;
 mongoose
   .connect(DB, {
     useNewUrlParser: true,
