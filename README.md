@@ -11,7 +11,7 @@ This is an API built for scraping events from web pages.
 
 ## Live Demo
 
-[Live Demo Link](https://henry-kc-bookstore-app.herokuapp.com/)
+[Live Demo Link](https://henry-kc-web-scrapping-app.herokuapp.com/api/v1/events-conferences)
 
 ## Application Tradeoffs
 This application constantly deletes data from the database everyday and repopulates the data with the current data from the crapped events website. This is done so that all the events in the database are in sync with the event website data.
@@ -22,7 +22,7 @@ The application API architecture provides the services similar to GraphQL. You c
 
 # API Documentation
 
-This API only uses `GET` request to communicate to the server with the endpoint `127.0.0.1:8000/api/v1/events-conferences`. 
+This API only uses `GET` request to communicate to the server with the endpoint `https://henry-kc-web-scrapping-app.herokuapp.com/api/v1/events-conferences`. 
 
 All responses come in standard JSON. 
 
@@ -76,7 +76,7 @@ http code 200
 
 ### GET REQUEST:
 
-`127.0.0.1:8000/api/v1/events-conferences`
+`https://henry-kc-web-scrapping-app.herokuapp.com/api/v1/events-conferences`
 
 The above endpoint returns all events with a default pagination of 20 results per page
 
@@ -108,7 +108,7 @@ The above endpoint returns all events with a default pagination of 20 results pe
 
 ### GET REQUEST With Field Filter:
 
-`127.0.0.1:8000/api/v1/events-conferences?fields=name,location`
+`https://henry-kc-web-scrapping-app.herokuapp.com/api/v1/events-conferences?fields=name,location`
 
 The above endpoint returns all events with a default pagination of 20 results per page but the documents will contain only the name, location and the id fields.
 
@@ -134,7 +134,7 @@ The above endpoint returns all events with a default pagination of 20 results pe
 
 ### GET REQUEST With Field Filter:
 
-`127.0.0.1:8000/api/v1/events-conferences?fields=name,location`
+`https://henry-kc-web-scrapping-app.herokuapp.com/api/v1/events-conferences?fields=name,location`
 
 The above endpoint returns all events with a default pagination of 20 results per page but the documents will contain only the name, location and the id fields.
 
@@ -160,7 +160,7 @@ The above endpoint returns all events with a default pagination of 20 results pe
 
 ### GET REQUEST With Page Limit:
 
-`127.0.0.1:8000/api/v1/events-conferences?limit=4`
+`https://henry-kc-web-scrapping-app.herokuapp.com/api/v1/events-conferences?limit=4`
 
 The above endpoint URL returns all events with 4 items per page.
 
@@ -187,7 +187,7 @@ The above endpoint URL returns all events with 4 items per page.
 
 ### GET REQUEST With A Particular Page:
 
-`127.0.0.1:8000/api/v1/events-conferences?page=2`
+`https://henry-kc-web-scrapping-app.herokuapp.com/api/v1/events-conferences?page=2`
 
 The above endpoint URL returns page 2 of all events in the database. It shows from item 21 to 40 (with default limit of 20 per page)
 
@@ -218,7 +218,7 @@ The above endpoint URL returns page 2 of all events in the database. It shows fr
 ```
 #### You can combine the limit and page like so:
 
-`127.0.0.1:8000/api/v1/events-conferences?page=10&limit=8`
+`https://henry-kc-web-scrapping-app.herokuapp.com/api/v1/events-conferences?page=10&limit=8`
 
 This produces a response of 8 items per page and tries to get page 10. If the requested page is not available, the `dataCound` field becomes zero (0)
 
