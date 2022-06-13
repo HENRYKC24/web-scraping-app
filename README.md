@@ -259,7 +259,7 @@ Feel free to check the [issues page](https://github.com/HENRYKC24/web-scraping-a
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-- I remain indebted to all software engineers across the world for helping me in one or the other in the project and in my career.
+- I remain indebted to all software engineers across the world for helping me in one way or the other in the project and in my career.
 
 ## 📝 License
 
