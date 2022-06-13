@@ -1,11 +1,8 @@
 const express = require("express");
-const conferenceRoute = require("./routes/conference");
-const eventsRoute = require("./routes/events");
+const eventsConferencesRoute = require("./routes/eventsConferences");
 
 const app = express();
 
-app.use("/api/v1/conferences", conferenceRoute);
-app.use("/api/v1/events", eventsRoute);
+app.use("/api/v1/events-conferences", eventsConferencesRoute);
 
-const PORT = 8000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = app;
